@@ -1,0 +1,446 @@
+
+
+
+1. Вывести всех сотрудников из таблицы Employees.
+
+SELECT * FROM Employees;
+
+2. Вывести LastName, FirstName и City тех сотрудников, кто проживает в Лондоне.
+
+SELECT LastName, FirstName, City FROM Employees 
+WHERE City = 'London';
+
+3. Вывести имена сотрудников, которые проживают в Redmond или Seattle.
+
+SELECT FirstName FROM Employees WHERE City = 'Redmond' OR City = 'Seattle';
+
+4. Вывести фамилию, имя и должность сотрудников, которых наняли (HireDate) 
+1 апреля 1992 года и проживающих в USA.
+
+SELECT LastName, FirstName, Title 
+FROM Employees 
+WHERE HireDate = '19920401' AND Country = 'USA';
+
+5. Вывести все заказы (Orders), которые были сделаны работником EmployeeID равным 5.
+
+SELECT * FROM Orders 
+WHERE EmployeeID = 5;
+
+6. Вывести продукты, цена (UnitPrice) которых меньше или равна 10.
+
+SELECT * FROM  Products WHERE UnitPrice <= 10;
+
+7. --Вывести продукты, цена которых больше либо равна 5, но меньше 20.
+
+SELECT * FROM  Products WHERE UnitPrice >= 5 and UnitPrice < 20;
+
+8. Вывести фамилию и имя работника в одном столбце с пробелом между именем и фамилией.
+
+SELECT (LastName + ' ' + FirstName) AS Name  
+FROM Employees
+
+9. Сделать задание 8 с функцией CONCAT. 
+
+SELECT CONCAT(LastName, ' ', FirstName) AS Name 
+FROM Employees;
+
+10. Вывести имена сотрудников, которых наняли в промежуток с 1 апреля 1992 года по 30 октября 1993 года.
+
+SELECT LastName, FirstName
+FROM Employees
+WHERE HireDate between '19920401' and '19931030';
+
+11. Вывести продукты, цена которых больше либо равна 5, но меньше 20 включительно. 
+--Написать запрос используя знаки >, < и =. 
+--Затем с использованием between. 
+--Обрати внимание, включаются ли в интервал крайние значения при использовании between.
+--Результатом выполнения задания должны быть 2 запроса – с between и со знаками < и >.
+
+SELECT ProductID, ProductName
+FROM Products 
+WHERE UnitPrice >= 5 AND UnitPrice < 20;
+
+SELECT ProductID, ProductName
+FROM Products 
+WHERE UnitPrice between 5 AND 20;
+
+12. Вывести имена сотрудников, которые проживают не в Лондоне и не в Tacoma.
+
+SELECT LastName, FirstName 
+FROM Employees
+WHERE City NOT IN ('London','Tacoma');
+
+13. Вывести продукты (Products), не состоящие в категории 2, 8 и 7. 
+Используй CategoryID.
+
+SELECT ProductName
+FROM Products
+WHERE CategoryID NOT IN (2,8,7);
+
+14. Вывести все продукты (Products), чье имя начинается на букву C.
+
+SELECT ProductName
+FROM Products
+WHERE ProductName LIKE 'C%';
+
+15. Вывести все продукты, у которых в имени встречается хотя бы одна буква k.
+
+SELECT ProductName
+FROM Products
+WHERE ProductName LIKE '%k%';
+
+16. Вывести все продукты, у которых имя заканчивается на букву s.
+
+SELECT ProductName
+FROM Products
+WHERE ProductName LIKE '%s';
+
+17. Вывести все продукты, у которых третья буква e.
+
+SELECT ProductName
+FROM Products
+WHERE ProductName LIKE '__e%';
+
+18. Вывести те продукты, у которых третья буква в слове не а.
+
+SELECT ProductName
+FROM Products
+WHERE ProductName NOT LIKE '__a%';
+
+19. Вывести имена, фамилии и города клиентов (Customers). 
+Отсортировать по городу от А до Z.
+
+SELECT ContactName, City
+FROM Customers
+ORDER BY City ASC;
+
+20. Вывести имена, фамилии и города клиентов (Customers). 
+Отсортировать в обратном порядке.
+
+SELECT ContactName, City
+FROM Customers
+ORDER BY City DESC;
+
+21. Вывести названия продуктов и их цену. 
+Отсортировать по цене в порядке от большего к меньшему.
+
+SELECT ProductName, UnitPrice 
+FROM Products
+ORDER BY UnitPrice DESC;
+
+22. Вывести города, в которых проживают работники (employees), без повторения. 
+Используй DISTINCT.
+
+SELECT DISTINCT City
+FROM Employees;
+
+23. Вывести общее количество сотрудников в таблице Employees.
+
+SELECT COUNT(*) 
+FROM Employees 
+
+24. Вывести максимальную цену продукта из таблицы Products.
+
+SELECT MAX(UnitPrice) 
+FROM Products;
+
+25. Вывести минимальную цену продукта из таблицы Products.
+
+SELECT MIN(UnitPrice) 
+FROM Products;
+
+26. Вывести среднюю цену продукта из таблицы Products.
+
+SELECT AVG (UnitPrice) 
+FROM Products;
+
+27. Вывести общую сумму всех заказов из таблицы Order Details.
+
+SELECT SUM (UnitPrice)
+FROM [Order Details]
+
+28. Из таблицы Customers вывести 2 столбца. 
+В первом - города, во втором – количество заказчиков, находящихся в этих городах.
+
+SELECT City, Count (CustomerID) AS 'CityCustomers' 
+FROM Customers  
+GROUP BY City;
+
+29. Вывести максимальную цену товара в каждой категории. 
+Переименовать колонку с максимальной ценой товара как max_price.
+
+SELECT CategoryID, MAX (UnitPrice) AS 'max_price'
+FROM Products
+GROUP BY CategoryID;
+
+30. Вывести общее количество единиц (quantity), 
+имеется в виду сумма, заказанных товаров, в каждом заказе. 
+Использовать таблицу Order Details.
+
+SELECT OrderID, SUM (Quantity) AS 'Quantity'
+FROM [Order Details]
+GROUP BY OrderID
+
+31. Вывести максимальную цену товара в каждой категории, 
+но с условием, что выводятся только те категории, 
+в которых максимальная цена товара больше или равна 116. 
+
+SELECT CategoryID, MAX (UnitPrice) AS 'max_price' 
+FROM Products
+GROUP BY CategoryID
+HAVING MAX (UnitPrice) >= 116;
+
+32. Выполнить задание 30 еще раз, но с условием, 
+что выводятся только те заказы, в которых по 150 единиц товаров.
+
+SELECT OrderID, SUM (Quantity) AS 'Quantity'
+FROM [Order Details]
+GROUP BY OrderID
+HAVING COUNT (Quantity) = 150;
+
+33. Вывести продукты, которые имеют категорию 7 или 6.
+
+SELECT ProductName, CategoryID
+FROM Products
+WHERE CategoryID = 7 OR CategoryID = 6
+ORDER by CategoryID;
+
+34. Вывести работников, у которых дата рождения больше либо равна 1966-01-01.
+
+SELECT LastName, FirstName
+FROM Employees
+WHERE BirthDate >= '19660101'
+
+35. Вывести продукты, у которых цена от 20 до 31.
+
+SELECT ProductName, UnitPrice
+FROM Products
+WHERE UnitPrice between 20 AND 31;
+
+36. Вывести имена территории без повторений (dbo.Territories). 
+Отсортировать в обратном порядке.
+
+SELECT DISTINCT TerritoryDescription 
+FROM Territories
+ORDER BY TerritoryDescription DESC
+
+37. Вывести детали заказа с OrderID = 10249.
+
+SELECT * FROM [Order Details]
+WHERE OrderID = 10249
+
+
+38. Вывести названия продуктов и ID поставщика (таблица Products), 
+которые были поставлены поставщиками (Suppliers) из Японии
+
+select ProductName, SupplierID
+from Products
+WHERE SupplierID IN
+(SELECT SupplierID
+FROM Suppliers
+WHERE Country = 'Japan')
+
+39. Вывести названия продуктов и ID поставщика (таблица Products), 
+которые были поставлены поставщиками (Suppliers) из Германии 
+и у которых имя категории 'Seafood' (CategoryName в Categories).
+
+SELECT ProductName, SupplierID, CategoryID
+from Products
+WHERE SupplierID IN
+(SELECT SupplierID
+FROM Suppliers
+WHERE Country = 'Germany') 
+AND 
+CategoryID IN
+(SELECT CategoryID
+FROM Categories
+WHERE CategoryName = 'Seafood')
+
+40. Вывести города и страны, в которых проживают или клиенты, или поставщики (Customers и Suppliers). 
+Страны и города могут повторяться в списке. 
+Отсортировать в результат запроса в обратном порядке по городу.
+
+SELECT City, Country 
+FROM Customers
+UNION ALL 
+SELECT City, Country FROM Suppliers
+ORDER by City DESC 
+
+41. Вывести имя компании и страну из таблиц клиентов и поставщиков (Customers и Suppliers), причем должность каждого такого клиента и поставщика - Sales Representative. 
+
+SELECT CompanyName, Country 
+FROM Customers
+WHERE ContactTitle = 'Sales Representative'
+UNION 
+SELECT CompanyName, Country 
+FROM Suppliers
+WHERE ContactTitle = 'Sales Representative'
+
+42. Вывести страны, в которых проживают ТОЛЬКО клиенты и нет поставщиков.
+
+SELECT Country 
+FROM Customers
+EXCEPT 
+SELECT Country 
+FROM Suppliers
+
+43. Вывести страны, в которых проживают ТОЛЬКО поставщики и нет клиентов.
+
+SELECT Country 
+FROM Suppliers
+EXCEPT
+SELECT Country 
+FROM Customers
+
+44. Вывести страны, в которых проживают и поставщики и клиенты.
+
+SELECT Country 
+FROM Suppliers
+INTERSECT
+SELECT Country 
+FROM Customers
+
+45. Для каждого заказа, вывести ID самого заказа, имя и фамилию сотрудника, оформившего его.
+
+SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Employees
+INNER JOIN 
+Orders
+ON Employees.EmployeeID = Orders.EmployeeID
+
+46. Вывести названия продуктов, заказанных 20, 30 или 50 раз, а также число заказов.
+
+SELECT Products.ProductName,
+count(*) AS Quantity_of_orders
+FROM Products
+JOIN [Order Details] on Products.ProductID = [Order Details].ProductID
+GROUP BY Products.ProductName
+HAVING COUNT([Order Details].Quantity) in (20, 50, 30)
+
+47. Посчитать количество подчиненных у каждого сотрудника 
+--(таблица Employees – обратите внимание на столбец ReportsTo, в нем проставлено ID менеджера, то есть человека которому работник отчитывается). 
+У работника может не быть подчиненных, то есть ситуация когда в поле выведется 0 нормальна. Результат запроса вывести в виде: имя, фамилия и количество подчиненных.
+
+SELECT mgr.FirstName, mgr.LastName,
+COUNT(emp.employeeID) AS employee_count
+FROM Employees AS mgr
+LEFT JOIN Employees AS emp ON emp.ReportsTo = mgr.EmployeeID
+WHERE mgr.ReportsTo IS NULL 
+OR mgr.ReportsTo IS NOT NULL
+GROUP BY mgr.FirstName, mgr.LastName
+ORDER BY employee_count DESC
+
+48. Вывести имена компаний, страну, город, регион, где они расположены, а также контактные данные (один столбец) для всех заказчиков и поставщиков. Учесть, что если значение в столбце регион отсутствует, то вывести No region. Также под контактными данными подразумевается вывод или факса, или домашней страницы (если такое поле имеется в таблице), или телефона, если то или иное значение не отсутствует. Задать псевдонимы (alias) для тех столбцов в запросе, где имя отсутствует.
+
+SELECT Customers.CompanyName, Customers.Country, Customers.City, 
+ISNULL(Customers.Region, 'No Region') AS Region,
+COALESCE(Customers.Phone, Customers.Fax) AS Contacts
+FROM Customers
+UNION ALL 
+SELECT Suppliers.CompanyName, Suppliers.Country, Suppliers.City,  
+ISNULL(Suppliers.Region, 'No Region') AS Region,
+COALESCE(Suppliers.Phone, Suppliers.Fax, Suppliers.HomePage) AS Contacts
+FROM Suppliers
+
+49. Вывести имя, фамилию, дату принятия на работу, а также количество лет, которые были проработаны каждым сотрудником на текущую дату.
+
+SELECT FirstName, LastName, HireDate, 
+DATEDIFF (year, HireDate, '2022-07-17') AS Duration
+FROM Employees
+
+50. Модифицировать 49 запрос таким образом, чтобы вместо количества лет, которые сотрудник работает в компании выводился текст Qualified employee, если сотрудник проработал 25 и менее лет, или Highly qualified employee, если работник проработал больше чем 25 лет.
+
+SELECT FirstName, LastName, HireDate, 
+CASE
+    WHEN DATEDIFF (year, HireDate, '2022-07-17') <= 25 
+        THEN 'Qualified employee'
+    WHEN DATEDIFF (year, HireDate, '2022-07-17') > 25 
+        THEN 'Highly qualified employee'
+        END AS Duration
+FROM Employees
+
+51. Создать абсолютную копию таблицы Customers (со всеми данными). Назвать можно как угодно.
+
+CREATE TABLE [dbo].[CloneCustomers](
+	[CustomerID] [nchar](5) NOT NULL,
+	[CompanyName] [nvarchar](40) NOT NULL,
+	[ContactName] [nvarchar](30) NULL,
+	[ContactTitle] [nvarchar](30) NULL,
+	[Address] [nvarchar](60) NULL,
+	[City] [nvarchar](15) NULL,
+	[Region] [nvarchar](15) NULL,
+	[PostalCode] [nvarchar](10) NULL,
+	[Country] [nvarchar](15) NULL,
+	[Phone] [nvarchar](24) NULL,
+	[Fax] [nvarchar](24) NULL)
+
+INSERT INTO [dbo].[CloneCustomers]
+(CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax)
+SELECT CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax
+FROM [dbo].[Customers]
+
+52. В новую созданную таблицу добавить новый столбец с названием MobilePhone. Использовать тип данных с учетом того, что при записи мобильного телефона могут использоваться и символы, например, скобки.
+
+ALTER TABLE [dbo].[CloneCustomers]
+ADD [MobilePhone] [nvarchar](24) NULL
+
+53. Для любых трех записей обновить значение в поле MobilePhone. Указать произвольный номер телефона. Проверить результат с помощью команды select.
+
+
+UPDATE [dbo].[CloneCustomers]
+SET MobilePhone = '025-339'
+WHERE CustomerID = 'ALFKI'
+UPDATE [dbo].[CloneCustomers]
+SET MobilePhone = '045-900'
+WHERE CustomerID = 'ANATR'
+UPDATE [dbo].[CloneCustomers]
+SET MobilePhone = '086-9898'
+WHERE CustomerID = 'ANTON'
+
+Select * FROM [dbo].[CloneCustomers]
+
+54. Из таблицы удалить все столбцы, связанные с адресом компании (адрес, город, регион. индекс, страна).
+
+ALTER TABLE [dbo].[CloneCustomers]
+DROP COLUMN Address, City, Region, PostalCode, Country
+
+55. Обратите внимание, что когда вы создали копию таблицы Customers, то первичный ключ не был автоматически задан для новой таблицы (можно проверить в папке Keys для таблицы). Задайте его.
+
+ALTER TABLE [dbo].[CloneCustomers]
+ADD CONSTRAINT [PK_CloneCustomers] PRIMARY KEY CLUSTERED 
+(
+	[CustomerID] ASC
+)
+
+
+56. Вставьте двух новых заказчиков в таблицу.
+
+INSERT INTO [dbo].[CloneCustomers]
+           ([CustomerID],
+		   [CompanyName],
+           [ContactName],
+           [ContactTitle],
+		   [Phone],
+		   [Fax],
+		   [MobilePhone]
+		   )
+ VALUES
+ ('CANDY','Johnny Cash', 'Michael Smith', 'Owner', '967-4525', '967-4525', '981-5678916'),
+('WESTE','Good Place', 'Alex Greenwood', 'Owner', '900-4520', '900-4530', '946-5678916')
+
+57. Создайте представление, которое будет отображать информацию из задания 50.
+
+
+CREATE VIEW QualificationOfEmployees
+AS
+SELECT FirstName, LastName, HireDate, 
+CASE
+    WHEN DATEDIFF (year, HireDate, '2022-07-17') <= 25 
+        THEN 'Qualified employee'
+    WHEN DATEDIFF (year, HireDate, '2022-07-17') > 25 
+        THEN 'Highly qualified employee'
+        END AS Duration
+FROM Employees
+
+
+SELECT * FROM QualificationOfEmployees

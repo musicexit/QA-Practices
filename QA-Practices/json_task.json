@@ -1,0 +1,41 @@
+{
+  "objectName": "Room",
+  "city": "Petersburg",
+  "district": "Primorsky",
+  "address": "Primorsky prospect 532-67",
+  "country": "RU",
+  "planet": "Earth",
+  "built": 2022,
+  "residential": true,
+  "registeredpersons": 2, 
+  "objects": [
+    {
+      "name": "Desk",
+	  "secretname": "clever friend",
+      "age": 5,
+	  "available": true,
+      "price": 25
+    },
+    {
+      "name": "Sofa",
+	  "secretname": "old person",
+      "age": 24,
+	  "available": false,
+      "price": null
+    },
+    {
+      "name": "pillow",
+	  "secretname": "dreamy friend", 
+      "age": 1,
+      "available": true,
+      "price": 500
+	},
+	{
+      "name": "door",
+	  "secretname": "welcome", 
+      "age": 2,
+      "available": true,
+      "price": 35000
+	}, 
+      ]
+} 

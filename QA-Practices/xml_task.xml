@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<room>
+	<object category = "chair">
+        <secretname lang1 = "en">Comfort Friend
+		lang2 = "ru">Удобный друг
+		</secretname>
+		<color RGB="false">black</color>
+        <age>4</age>
+        <price>99.99</price>
+    </object>
+<!-- Desk is small-->	
+	<object category = "desk">
+        <secretname 
+		lang1 = "en">Clever Friend
+		lang2 = "ru">Умный друг
+		</secretname>
+		<color RGB="false">white</color>
+        <age>5</age>
+        <price>100.20</price>
+    </object>
+		
+	<object category = "sofa">
+        <secretname 
+		lang1 = "en">Old Person
+		lang2 = "ru">Олдовая персона
+		</secretname>
+		<color RGB="true">#ff08ff</color>
+        <age>24</age>
+        <price>null</price>	
+    </object>
+	
+	<object category = "pillow">
+        <secretname 
+		lang1 = "en">Dreamy Friend
+		lang2 = "ru">Сонный друг
+		</secretname>
+		<color RGB="true">#f6b511</color>
+        <age>1</age>
+        <price>500</price>	
+    </object>
+		
+	<object category = "door">
+        <secretname 
+		lang1 = "en">Welcome
+		lang2 = "ru">Добро пожаловать
+		</secretname>
+		<color RGB="true">#ef23fe</color>
+        <age>2</age>
+        <price>35000</price>	
+		
+    </object>
+<!--Dog is hard to find-->	
+	<pet type="dog"/>
+    </room>
+
+
+
+
+
+
+
+
+
+

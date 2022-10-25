@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "32f7a2cc-2d87-4d68-b35a-32f33f1a3468",
+		"name": "Trello Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18242714"
+	},
+	"item": [
+		{
+			"name": "Create a new Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/?name=Agile Incorporation&defaultLists=false&key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Agile Incorporation"
+						},
+						{
+							"key": "defaultLists",
+							"value": "false"
+						},
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a list in Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/X8BSc1R2/lists?name=TrelloList&key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"X8BSc1R2",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TrelloList"
+						},
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a first card on a list in Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=62c4114248e0b5708bfbea90&key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6&name=First Card",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "62c4114248e0b5708bfbea90"
+						},
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						},
+						{
+							"key": "name",
+							"value": "First Card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a second card on a list in Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=62c4114248e0b5708bfbea90&key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6&name=Second Card",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "62c4114248e0b5708bfbea90"
+						},
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						},
+						{
+							"key": "name",
+							"value": "Second Card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a third card on a list in Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=62c4114248e0b5708bfbea90&key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6&name=Third Card",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "62c4114248e0b5708bfbea90"
+						},
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						},
+						{
+							"key": "name",
+							"value": "Third Card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a fourth card on a list in Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=62c4114248e0b5708bfbea90&key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6&name=Fourth Card",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "62c4114248e0b5708bfbea90"
+						},
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						},
+						{
+							"key": "name",
+							"value": "Fourth Card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read existing list from Trello board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/62c4114248e0b5708bfbea90?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"62c4114248e0b5708bfbea90"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read existing card from Trello board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/62c42283adfc5420cd8299de?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"62c42283adfc5420cd8299de"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read existing board membership from Trello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/X8BSc1R2/memberships?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"X8BSc1R2",
+						"memberships"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read non existing list from Trello board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/63c4114248e0b5708bfbea90?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"63c4114248e0b5708bfbea90"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update content of a list on Trello board",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/62c4114248e0b5708bfbea90?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6&name=ListTrello",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"62c4114248e0b5708bfbea90"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						},
+						{
+							"key": "name",
+							"value": "ListTrello"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update content of a card on Trello board",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/62c42283adfc5420cd8299de?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6&name=2nd card",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"62c42283adfc5420cd8299de"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						},
+						{
+							"key": "name",
+							"value": "2nd card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a card from a Trello board",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/62c4240a57600e29eb415623?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"62c4240a57600e29eb415623"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archive all cards on a list on a Trello board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/62c4114248e0b5708bfbea90/archiveAllCards?key=f4f41e7b5d7fcf91a2af0afd36d1e74b&token=38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"62c4114248e0b5708bfbea90",
+						"archiveAllCards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4f41e7b5d7fcf91a2af0afd36d1e74b"
+						},
+						{
+							"key": "token",
+							"value": "38124448e0a54d60ece7ac6fb91c0d95a86f07dbaa39f023958a0fb0264e2fa6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
